@@ -13,72 +13,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <!-- My Style -->
   <link rel="stylesheet" href="./style/main.css" />
-  <style>
-    @media screen and (max-width: 768px) {
-      body {
-        font-size: 14px;
-      }
-      .container {
-        width: 100%;
-        padding: 10px;
-      }
-      .one h1 {
-        font-size: 1.5em;
-      }
-      .two {
-        font-size: 1.2em;
-      }
-      .text-box {
-        width: 90%;
-        margin: 0 auto;
-        padding: 10px;
-      }
-      .text-box .hbd-chatbox {
-        font-size: 0.9em;
-      }
-      .fake-btn {
-        margin-top: 5px;
-        font-size: 0.8em;
-        padding: 5px 10px;
-      }
-      .wish-hbd {
-        font-size: 2.2em;
-      }
-      .profile-picture {
-        width: 75%;
-        max-width: 250px;
-        height: auto;
-      }
-      .six {
-        position: relative;
-      }
-      .hat {
-        width: 50%;
-        max-width: 65px;
-        top: -40px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      .baloons img {
-        width: 50px;
-      }
-      .eight svg {
-        width: 30px;
-        height: 30px;
-      }
-    }
-    .replay-button {
-      display: none;
-      margin: 20px auto;
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
 </head>
 
 <body>
@@ -213,49 +147,12 @@
             <p class="last-smile">:)</p>
         </div>
     </div>
-  
-    <button class="replay-button" onclick="replayAnimation()">Replay Animation</button>
 
+</body>
     <!-- Greensock -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <!-- Sweetalert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="application/javascript" src="./script/main.js"></script>
-    <script>
-        // Show replay button after animation ends
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelector('.replay-button').style.display = 'block';
-            }, 30000); // Adjust this time based on your animation duration
-        });
-
-        function replayAnimation() {
-            // Hide the replay button
-            document.querySelector('.replay-button').style.display = 'none';
-            
-            // Reload the page to restart the animation
-            location.reload();
-        }
-
-        // Slow down balloon animation
-        gsap.to('.baloons img', {
-            y: -20,
-            duration: 2,
-            ease: "power1.inOut",
-            repeat: -1,
-            yoyo: true,
-            stagger: 0.1
-        });
-
-        // Slow down background color transition
-        gsap.to('body', {
-            backgroundColor: '#FFA500',
-            duration: 10,
-            repeat: -1,
-            yoyo: true
-        });
-    </script>
-
-</body>
 
 </html>
