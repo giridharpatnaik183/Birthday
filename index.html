@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,6 +15,9 @@
   <link rel="stylesheet" href="./style/main.css" />
   <style>
     @media screen and (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
       .container {
         width: 100%;
         padding: 10px;
@@ -27,6 +30,7 @@
       }
       .text-box {
         width: 90%;
+        margin: 0 auto;
       }
       .wish-hbd {
         font-size: 2.2em;
@@ -49,9 +53,13 @@
       .baloons img {
         width: 30px;
       }
+      .eight svg {
+        width: 30px;
+        height: 30px;
+      }
     }
     .replay-button {
-      display: block;
+      display: none;
       margin: 20px auto;
       padding: 10px 20px;
       font-size: 1em;
@@ -195,9 +203,9 @@
             <p id="replay">Or click, if you want to watch it again.</p>
             <p class="last-smile">:)</p>
         </div>
-
-        <button class="replay-button" onclick="replayAnimation()">Replay Animation</button>
     </div>
+
+    <button class="replay-button" onclick="replayAnimation()">Replay Animation</button>
 
     <!-- Greensock -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -205,15 +213,19 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="application/javascript" src="./script/main.js"></script>
     <script>
+        // Show replay button after animation ends
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.replay-button').style.display = 'block';
+            }, 30000); // Adjust this time based on your animation duration
+        });
+
         function replayAnimation() {
-            // Assuming your main.js has a function to start the animation
-            // You might need to adjust this based on your actual implementation
-            if (typeof startAnimation === 'function') {
-                startAnimation();
-            } else {
-                // Fallback to reloading the page if startAnimation doesn't exist
-                location.reload();
-            }
+            // Hide the replay button
+            document.querySelector('.replay-button').style.display = 'none';
+            
+            // Reload the page to restart the animation
+            location.reload();
         }
     </script>
 
